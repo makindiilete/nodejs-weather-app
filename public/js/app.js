@@ -20,8 +20,8 @@ weatherForm.addEventListener("submit", e => {
   messageOne.textContent = "Loading....";
   //We need to clear the content of the 2nd paragraph anytime we are waiting for an async operation response and we showing the Loading....
   messageTwo.textContent = "";
-  //  FETCHING WEATHER
-  fetch("http://localhost:3000/weather?address=" + location).then(response => {
+  //  FETCHING WEATHER : - we removed "localhost:3000" from here.
+  fetch("/weather?address=" + location).then(response => {
     response.json().then(data => {
       //  If we have an error, we print it from the "error" property inside "data" object
       if (data.error) {
